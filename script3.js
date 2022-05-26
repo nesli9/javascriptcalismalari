@@ -49,7 +49,7 @@ console.log(totalOrder3);
 
 //doğum yılına göre yaş hesaplama
 
-var yearOfBirth = 1986;
+const yearOfBirth = 1986;
 
 console.log(new Date().getFullYear()-yearOfBirth);
 
