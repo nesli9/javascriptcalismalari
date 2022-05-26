@@ -42,12 +42,21 @@ val = a!= b;
 val = a!== b;
 val = a>b;
 val =  a<b;
-
+val = a>=b;
+val = 5>=5;
 
 
 
 
 //4-Mantıksal Operatörler
+
+// && (and) , || or , ! (not)
+val = (a>b) && (a>c);
+val = (a>b) || (a<c);
+val = !(a>b);
+
+
+
 
 
 
