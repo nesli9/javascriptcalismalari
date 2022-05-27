@@ -23,7 +23,7 @@ const boyAda = 1.50;
 IndexAda = (kgAda) / (boyAda * boyAda);
 IndexCan = (kgCan) / (boyCan * boyCan);
 
-console.log(IndexAda , IndexCan);
+console.log(IndexAda.toFixed() , IndexCan.toFixed(2));
 
 let adaBuyukIndex = IndexAda > IndexCan;
 let canBuyukIndex = IndexCan > IndexAda;
@@ -42,4 +42,6 @@ console.log("Ada zayıf  : " +AdaZayif);
 console.log("Ada normal  : " +AdaNormal);
 console.log("Ada kilolu  : " +AdaKilolu);
 console.log("Ada Şişman  : " +AdaSisman);
+
+
 
