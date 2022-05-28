@@ -25,11 +25,13 @@ var  min = 50;
 var max = 100;
 console.log(Math.floor(min+Math.random()*(max-min)));
 
-//* Bir personelin yaptığı mesai ye göre aldığı maaşı hesaplayalım
-// brüt maaş : 3700 tl
-// brüt mesai : 10.3 tl
-// ağustos ayı boyunca mesai toplamı 42 saat ise toplam brüt maaş nedir?
-// brüt maaş üzerinden toplam kesinti oranı %25 ise alınacak toplam net maaş nedir?
+/**
+ * Bir personelin yaptığı mesai ye göre aldığı maaşı hesaplayalım
+ brüt maaş : 3700 tl
+ brüt mesai : 10.3 tl
+ ağustos ayı boyunca mesai toplamı 42 saat ise toplam brüt maaş nedir?
+ brüt maaş üzerinden toplam kesinti oranı %25 ise alınacak toplam net maaş nedir?
+ */
 
 var brutMaas = 3700;
 var mesaiUcreti = 10.3;
