@@ -52,7 +52,7 @@ const container = document.querySelector('.container');
 
 // const deleteItems = document.querySelectorAll('.fa-times');
 // deleteItems.forEach(function(item){
-//     item.addEventListener('clic',function(e){
+//     item.addEventListener('click',function(e){
 //         console.log(e.target);
 //     });
 // });
@@ -61,11 +61,12 @@ const ul = document.querySelector('ul');
 
 ul.addEventListener('click',function(e){
     //console.log(e.target);
-    if (e.target.className ==='.fas-times'){
+    if (e.target.className ==='fas fa-times'){
         console.log(e.target.parentElement.parentElement.remove());
 
         e.preventDefault();
     }
+    
 });
 
 
