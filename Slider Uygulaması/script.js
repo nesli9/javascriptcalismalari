@@ -62,6 +62,7 @@ document.querySelectorAll('.arrow').forEach(function(item){
 })
 
 
+
 function init(settings){
 
     var prev;
