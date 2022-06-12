@@ -32,7 +32,7 @@ var interval;
 
 var settings={
     duration : '1000',
-    random : false
+    random : false //slayt resimlerinin rastgele değişmesi kapalı
 };
 
 init(settings);
@@ -62,12 +62,11 @@ document.querySelectorAll('.arrow').forEach(function(item){
 })
 
 
-
 function init(settings){
 
     var prev;
-    interval=setInterval(function(){
-        
+    interval=setInterval(function(){  //setTimeout : belirtilen sürede başlatılır ve durur.
+                                        //setInterval : ise clearInterval ile durdurulmadığı sürece tekrar eder. 
         if(settings.random){
             // random index
             do{
