@@ -31,6 +31,7 @@ console.log(yigit);
 
 
 console.log(emel.hasOwnProperty('lastName')); //lastName bilgisi prototype içerisinde yer aldığı için false olur
-console.log(emel.lastName);
-console.log(yigit.lastName);
+console.log(emel.lastName); // ikisndede turan sonucu gelir çünkü bu objelere person prototypeından direk olarak bu bilgi aktarılır
+console.log(yigit.lastName); //
+
 
