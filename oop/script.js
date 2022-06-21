@@ -1,18 +1,18 @@
 // // OOP: Nesne Tabanlı Programlama
 // // Object
 
-let soru = {
-    soruMetni: "Hangisi javascript paket yönetim uygulasıdır?",
-    cevapSecenekleri: {
-        a: "Node.js",
-        b: "Typescript",
-        c: "Npm"
-    },
-    dogruCevap: "c",
-    cevabiKontrolEt: function(cevap) {
-        return cevap === this.dogruCevap
-    }
-}
+// let soru = {
+//     soruMetni: "Hangisi javascript paket yönetim uygulasıdır?",
+//     cevapSecenekleri: {
+//         a: "Node.js",
+//         b: "Typescript",
+//         c: "Npm"
+//     },
+//     dogruCevap: "c",
+//     cevabiKontrolEt: function(cevap) {
+//         return cevap === this.dogruCevap
+//     }
+// }
 
 // let soru2 = {
 //     soruMetni: "Hangisi .net paket yönetim uygulasıdır?",
@@ -41,6 +41,7 @@ let soru = {
 // Sınıf, Constructor => nesne * 30
 // ES5, ES6, ES7
 
+//sınıf isminin baş harfi büyük harfle başlar
 function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
     this.soruMetni = soruMetni;
     this.cevapSecenekleri = cevapSecenekleri;
