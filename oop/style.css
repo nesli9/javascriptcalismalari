@@ -1,0 +1,44 @@
+.btn_start , 
+.guiz_box{
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+
+.quiz_box{
+    width: 550px;
+
+}
+
+.quiz_box header .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz_box .question_text{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quiz_box .option_list{
+    padding: 18px 0;
+
+}
+
+.quiz_box .option_list .option {
+    border: 1px #151d153B;
+    border-radius: 5px ;
+    padding: 8px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
