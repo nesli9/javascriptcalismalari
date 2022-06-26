@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const sayilar =[1,5,7,3,2,67];
+
+        // const tekSayilar = [];
+        // for (let sayi of sayilar){
+        //     if(sayi%2==1){
+        //         tekSayilar.push(sayi);
+        //     }
+        // }
+
+        const tekSayiKontrol = (sayi) => sayi %2 ==1;
+        sayilar.filter(tekSayiKontrol);
+        const tekSayilar = sayilar.filter(tekSayiKontrol);
+        console.log(tekSayilar);
+
+    </script>
+</body>
+</html>
