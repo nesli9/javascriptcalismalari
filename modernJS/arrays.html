@@ -12,6 +12,12 @@
     <script>
 
         const sayilar =[1,5,7,3,2,67];
+        const urunler = [
+            {urunAdı : "iphone11" , fiyat: 12000},
+            {urunAdı : "iphone12" , fiyat: 15000},
+            {urunAdı : "iphone13" , fiyat: 18000},
+            {urunAdı : "iphone13 Pro" , fiyat: 22000}
+        ];
 
         // const tekSayilar = [];
         // for (let sayi of sayilar){
@@ -20,10 +26,26 @@
         //     }
         // }
 
-        const tekSayiKontrol = (sayi) => sayi %2 ==1;
-        sayilar.filter(tekSayiKontrol);
-        const tekSayilar = sayilar.filter(tekSayiKontrol);
-        console.log(tekSayilar);
+        // const tekSayiKontrol = (sayi) => sayi %2 ==1;
+        // sayilar.filter(tekSayiKontrol);
+        // const tekSayilar = sayilar.filter(tekSayiKontrol); //tekSayiKontrol'()' parantez açıp kapatılmaz çünkü fonksiyon çalıştırılmıyor sadece fonksiyonun adresi filtera gönderilir
+        // console.log(tekSayilar);
+
+        // const tekSayilar = sayilar.filter((sayi) => sayi %2 ==1);
+        // const tekSayilar = sayilar.map((sayi) => sayi %2 ==1); //tek olan değerler true olarak gönderilir
+        
+        // const sonuc = urunler.map(urun => urun.urunAdı);
+        
+        // const filtrelenenUrunler = urunler.filter(urun => urun.fiyat > 15000);
+        // sonuc = filtrelenenUrunler.map(urun => urun.urunAdı);
+        
+        // const sonuc = urunler.filter(urun => urun.fiyat > 15000).map(urun => urun.urunAdı);
+        
+        // const sonuc = urunler.find(urun => urun.fiyat > 12000); //koşulu karşılayan ilk değer gönderilir
+        
+        const sonuc = urunler.findIndex(urun => urun.fiyat > 12000);
+
+        console.log(sonuc);
 
     </script>
 </body>
