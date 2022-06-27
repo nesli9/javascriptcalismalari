@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        // const msj = ["benim","adım","sadık","turan"];
+
+        // let sonuc ="";
+        // for(let x of msj){
+        //     sonuc += x + " ";
+        // }
+        // console.log(sonuc);
+
+        // console.log(...msj);// '...' --> spread operatörü (özellikle dizi kopyalama işleminde işimize yarar)
+
+        // const dizi1 = ["bir","iki"];
+        // const dizi2 = ["üç","dört"];
+
+        // const dizi3 = [...dizi1,...dizi2,"beş","altı"];
+        // console.log(dizi3);
+        
+        const sayilar1 = [1,2,3];
+        // const sayilar2 = sayilar1; //referans olarak kopyalama işlemi iki dizide bellekte aynı adresi tutttuğu için iki dizininde ilk elemanı değişir
+        const sayilar2 = [...sayilar1]; //value ile kopyalama (sayılar1 dizisindeki tüm elmanların değerleri sayilar2 dizisine atılır)
+
+        sayilar1[0] =10; 
+
+        console.log(sayilar1,sayilar2);
+
+        const user ={
+            username : "sadıkturan",
+            email : "info@gmail.com"
+        }
+
+        const adress ={
+            username : "abc", //son olan bilgi yazılır
+            city : "kocaeli"
+        }
+
+        console.log({...user,...adress});
+
+
+        //rest parameters
+        function toplam(...args){
+            let sonuc = 0;
+
+            for(let sayi of args){
+                sonuc += sayi;
+            }
+            return sonuc;
+        }
+        console.log(toplam(1,3,5));
+        console.log(toplam(1,3,5,10));
+
+        function bilgileriGoster(isim , soyad , ...adres){
+            console.log(isim,soyad,adres);
+        }
+
+        bilgileriGoster("ali","turan","istanbul","kadıköy");
+
+    </script>
+</body>
+</html>
