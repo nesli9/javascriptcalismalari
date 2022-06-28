@@ -36,6 +36,20 @@ UI.prototype.deleteCourse = function(element){
     }
 }
 
+UI.prototype.showAlert = function(message,className){
+    var alert = `
+        <div class="alert alert-${className}">
+            ${message}
+        </div>
+    `;
+    const row = document.querySelector('.row');
+    //beforeBegin , afterBegin , beforeEnd , afterEnd  --> alternatiflerin farkı etiket başladıktan önce yada sonra veya kapanıs etikentinden önce yada sonramı olduğunu belirtmek için kullanılır 
+    row.insertAdjacentHTML('beforeBegin',alert);
+
+    setTimeout(()=>{
+        document.querySelector('.alert').remove();
+    },3000);
+}
 
 
 document.getElementById('new-course').addEventListener('submit',function(e){
@@ -50,23 +64,27 @@ document.getElementById('new-course').addEventListener('submit',function(e){
     //creat UI
     const ui = new UI();
 
-    console.log(course);
-    //save to database
+    if(title ==='' || instructor ==='' || image ===''){
+        ui.showAlert('Please complate the form','warning');
+    }else{
+        //save to database
 
-    //show on the UI
-    //add course the list
-    ui.addCourseToList(course);
+        //show on the UI
+        //add course the list
+        ui.addCourseToList(course);
 
-    //clear controls
-    ui.clearControls();
+        //clear controls
+        ui.clearControls();
 
-
+        ui.showAlert('the couse has been added','success');
+    }
     e.preventDefault();
 });
 
 document.getElementById('course-list').addEventListener('click',function(e){
     const ui = new UI();
     ui.deleteCourse(e.target);
+    ui.showAlert('the course has been deleted','danger');
 });
 
 
