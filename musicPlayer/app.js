@@ -28,35 +28,31 @@ play.addEventListener("click", () => {
     isMusicPlay ? pauseMusic() : playMusic();
 });
 
-prev.addEventListener("click", () => {
-    prevMusic();
-});
+prev.addEventListener("click", () => { prevMusic(); });
 
-next.addEventListener("click", () => {
-    nextMusic();
-});
+next.addEventListener("click", () => { nextMusic(); });
 
-function prevMusic() {
+const prevMusic = () => {
     player.prev();
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
 }
 
-function nextMusic() {
+const nextMusic = () => {
     player.next();
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
 }
 
-function pauseMusic() {
+const pauseMusic = () => {
     container.classList.remove("playing");
     play.classList = "fa-solid fa-play";
     audio.pause();
 }
 
-function playMusic() {
+const playMusic = () => {
     container.classList.add("playing");
     play.classList = "fa-solid fa-pause";
     audio.play();
@@ -73,10 +69,16 @@ const calculateTime = (toplamSaniye) => {
 audio.addEventListener("loadedmetadata", () => {
     duration.textContent = calculateTime(audio.duration);
     progressBar.max = Math.floor(audio.duration);
+    progressBar.step = 1;
 });
 
 audio.addEventListener("timeupdate", () => {
     progressBar.value = Math.floor(audio.currentTime);
     currentTime.textContent = calculateTime(progressBar.value);
+});
+
+progressBar.addEventListener("input", () => {
+    currentTime.textContent = calculateTime(progressBar.value);
+    audio.currentTime = progressBar.value;
 });
 
