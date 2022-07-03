@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //login => username   (login işleminin bittiğinin bir sonraki sürece bildirilmesi gerekir)
+        //posts
+        //create post
+
+        //sipariş
+        //şiparişin hazırlanması (adım süreçleri)
+
+        console.log("start");
+
+        const login =(username , password ,callback) =>{
+            setTimeout( () =>{
+                callback ({username : username , email : "info@sadikturan.com"})
+            },1000);
+        }
+
+        const getPostsByUsername = (username ,callback) => {
+            setTimeout(()=> {
+                callback(["post 1" ,"post 2","post 3"]);
+            },2000); 
+        }
+
+
+        const getPostsDetails = (post , callback) =>{
+            setTimeout(()=>{
+                callback("post details");
+            },1000);
+        }
+
+        login("sadikturan","12345",user =>{
+            console.log(user);
+            console.log(user.username);
+            console.log(user.email);
+
+            getPostsByUsername(user.username ,(posts)=>{
+                console.log(posts);
+
+                getPostsDetails(posts[0],(details)=>{
+                    console.log(details);
+                });
+            });
+
+        });
+        
+
+        console.log("end");
+
+    </script>
+</body>
+</html>
