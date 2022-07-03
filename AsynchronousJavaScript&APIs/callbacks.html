@@ -18,6 +18,9 @@
         //sipariş
         //şiparişin hazırlanması (adım süreçleri)
 
+
+        //amaç süreci yönetebilme! 
+
         console.log("start");
 
         const login =(username , password ,callback) =>{
@@ -39,6 +42,9 @@
             },1000);
         }
 
+
+        //iç içe çalışma callback hell
+
         login("sadikturan","12345",user =>{
             console.log(user);
             console.log(user.username);
@@ -54,6 +60,7 @@
 
         });
         
+        //iç içe süreçlerden doğan callback hell oluşabilir
 
         console.log("end");
 
