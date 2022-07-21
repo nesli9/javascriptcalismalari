@@ -13,12 +13,15 @@ searchProfile.addEventListener('keyup',(event)=>{
         .then(res => {
                 if(res.profile.length === 0){
                     ui.showAlert(text);
-                }else{
+                }else{                   
                    ui.showProfile(res.profile[0]);
-                }        
-            
-            });   
-        }
+                   ui.showTodo(res.todo);
+                }  
+            }) 
+        .catch(err=>{
+            ui.showAlert(text);
+        })  
+}
         
 
 });
