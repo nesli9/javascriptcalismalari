@@ -29,7 +29,7 @@
 // // console.log(Counter.decrement());
 
 
-// //IIFE (Immediately Invoked Function Expressions)
+// //IIFE (Immediately Invoked Function Expressions) (if 'dir)
 
 // // (function(){   //her bir functionun kendi scopu vardır
   
@@ -87,7 +87,9 @@ var Module = (function(){
 
         },
     }
-})()
+})();
+
+Module.publicMethod();
 
 
 
