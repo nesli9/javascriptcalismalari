@@ -46,6 +46,6 @@ employees.push(factory.createEmployee('fulltime'));
 
 employees.forEach(function(emp){
     emp.say();
-})
+});
 
 
