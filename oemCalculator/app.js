@@ -1,12 +1,7 @@
 // Storage Controller
 const StorageController = (function () {
 
-
-
-
 })();
-
-
 
 // Product Controller
 const ProductController = (function () {
@@ -32,16 +27,21 @@ const ProductController = (function () {
         getData: function () {
             return data;
         },
-        getProductById: function(id){
-            let product =null;
+        getProductById: function (id) {
+            let product = null;
 
-            data.products.forEach(function(prd){
-                if(prd.id == id){
+            data.products.forEach(function (prd) {
+                if (prd.id == id) {
                     product = prd;
                 }
             })
-
             return product;
+        },
+        setCurrentProduct: function (product) {
+            data.selectedProduct = product;
+        },
+        getCurrentProduct: function () {
+            return data.selectedProduct;
         },
         addProduct: function (name, price) {
             let id;
@@ -133,6 +133,11 @@ const UIController = (function () {
         showTotal: function (total) {
             document.querySelector(Selectors.totalDolar).textContent = total;
             document.querySelector(Selectors.totalTL).textContent = total * 4.5;
+        },
+        addProductToForm: function () {
+            const selectedProduct = ProductController.getCurrentProduct();
+            document.querySelector(Selectors.productName).value = selectedProduct.name;
+            document.querySelector(Selectors.productPrice).value = selectedProduct.price;
         }
     }
 })();
@@ -150,7 +155,7 @@ const App = (function (ProductCtrl, UICtrl) {
         document.querySelector(UISelectors.addButton).addEventListener('click', productAddSubmit);
 
         // edit product
-        document.querySelector(UISelectors.productList).addEventListener('click',productEditSubmit);
+        document.querySelector(UISelectors.productList).addEventListener('click', productEditSubmit);
 
     }
 
@@ -165,33 +170,37 @@ const App = (function (ProductCtrl, UICtrl) {
 
             // add item to list
             UICtrl.addProduct(newProduct);
-			
-			 // get total
+
+            // get total
             const total = ProductCtrl.getTotal();
 
             // show total
             UICtrl.showTotal(total);
 
             // clear inputs
-            UIController.clearInputs();
-
+            UICtrl.clearInputs();
         }
+
+        console.log(productName, productPrice);
 
         e.preventDefault();
     }
 
-    const productEditSubmit = function(e){
+    const productEditSubmit = function (e) {
 
-        if(e.target.classList.contains('edit-product')){
-        
-            const id=           e.target.parentNode.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        if (e.target.classList.contains('edit-product')) {
+
+            const id = e.target.parentNode.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
 
             // get selected product
             const product = ProductCtrl.getProductById(id);
-            console.log(product);
+
+            // set current product
+            ProductCtrl.setCurrentProduct(product);
+
+            // add product to UI
+            UICtrl.addProductToForm();
         }
-
-
         e.preventDefault();
     }
 
