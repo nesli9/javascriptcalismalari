@@ -1,16 +1,16 @@
-import {elements} from '../base';
+import { elements } from '../base';
 
 export const backToTop = () => {
-    window.scrollTo({top:0, behavior:'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' }); //smooth ile scroll bar yavaşça youkarı çıkar
 }
 
-export const closeDetails = ()=> {
+export const closeDetails = () => {
     elements.movieDetailsContainer.classList.remove('d-block');
 }
 
 export const displayMovie = movie => {
 
-    var html  ='<div class="row">';
+    var html = '<div class="row">';
 
     var genres = "";
 
