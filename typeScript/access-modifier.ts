@@ -13,7 +13,7 @@ class Taxi implements Vehicle{
     
 
     constructor(private location?: Point , private color?: string){ 
-        
+    
     }
     
     travelTo(point : Point):void {
@@ -21,13 +21,7 @@ class Taxi implements Vehicle{
     };
 }
 
-class Bus implements Vehicle{
-    //..
-    currentLocation : Point;
-    travelTo(point : Point):void {
-        console.log(`Otobus X:${point.x} Y:${point.y} konumuna gidiyor`);
-    };
-}
+
 
 let taxi_1 : Taxi = new Taxi({x:1 ,y:5});
 taxi_1.travelTo({x:1,y:2});
